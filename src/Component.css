@@ -20,14 +20,14 @@
 }
 
 .startBtn {
-    background-color: rgb(9, 231, 101);
+    background-color: rgb(233, 50, 26);
     border-radius: 4rem;
     padding: 1rem;
     margin-left: 1rem;
 }
 
 .stopBtn {
-    background-color: rgb(233, 50, 26);
+    background-color: rgb(9, 231, 101);
     border-radius: 4rem;
     padding: 1rem;
     margin-left: 1rem;
