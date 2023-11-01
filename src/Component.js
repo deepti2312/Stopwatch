@@ -53,7 +53,14 @@ function Stopwatch() {
 function Currenttime() {
     const [zone, setZone] = useState("Asia/Kolkata")
     const [time, setTime] = useState(moment().tz(zone).format("LTS"));
-    const countries = moment.tz.names()
+    const [currentpage, setCurrentpage] = useState(0);
+    const countries = moment.tz.names();
+    let itemsperpage = 16
+
+    const startIndex = currentpage * itemsperpage;
+    const endIndex = startIndex + itemsperpage;
+    const displayedTimeZones = countries.slice(startIndex, endIndex);
+
 
     useEffect(() => {
         let clear = setInterval(() => {
@@ -67,6 +74,10 @@ function Currenttime() {
 
     }
 
+    const changePage = (page) => {
+        setCurrentpage(page)
+    }
+
     return (
         <>
             <div className="time">
@@ -74,8 +85,23 @@ function Currenttime() {
                 <p>{time}</p>
             </div>
             <div className='grid'>
-                {countries.map((name) => <button className="Btn" onClick={() => changeTime(name)}>{name}</button>)}
+                {displayedTimeZones.map((name) => <button className="Btn" onClick={() => changeTime(name)}>{name}</button>)}
             </div>
+            <div>
+                {countries.length > itemsperpage && (
+
+                    <div div className='Btns'>
+                        <button className="Btn1" onClick={() => changePage(currentpage - 1)} disabled={currentpage === 0}>
+                            <i class="fa fa-arrow-circle-left"></i>
+                        </button>
+                        <button className="Btn2" onClick={() => changePage(currentpage + 1)} disabled={endIndex >= countries.length}>
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </button>
+                    </div>
+
+                )}
+            </div >
+
         </>
     )
 }

@@ -41,3 +41,32 @@
     margin-left: 1rem;
 
 }
+
+.Btns {
+    text-align: center;
+}
+
+.Btn1 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 0.6rem;
+    width: 6rem;
+    font-size: larger;
+}
+
+.Btn1:disabled {
+    display: none;
+}
+
+.Btn2 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    margin-left: 14rem;
+    padding: 0.6rem;
+    width: 6rem;
+    font-size: larger;
+}
+
+.Btn2:disabled {
+    display: none;
+}
