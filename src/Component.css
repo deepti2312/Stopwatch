@@ -1,0 +1,43 @@
+.time {
+    text-align: center;
+    margin-top: 5rem;
+    color: rgb(160, 156, 156);
+    font-size: xx-large;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    margin-block: 2rem;
+    padding: 5rem;
+}
+
+.Btn {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 1rem;
+}
+
+.startBtn {
+    background-color: rgb(9, 231, 101);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+
+.stopBtn {
+    background-color: rgb(233, 50, 26);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}
+
+.resetBtn {
+    background-color: rgb(248, 204, 5);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}

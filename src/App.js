@@ -1,11 +1,20 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Stopwatch from './Component';
+import { Stopwatch, Currenttime } from './Component';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <Stopwatch />
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Currenttime />} />
+          <Route path='/stopwatch' element={<Stopwatch />} />
+        </Routes>
+      </BrowserRouter>
+
+    </>
   );
 }
 
