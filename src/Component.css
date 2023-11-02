@@ -70,3 +70,39 @@
 .Btn2:disabled {
     display: none;
 }
+
+.timeBtn {
+    padding: 5rem;
+    margin-left: 2rem;
+
+}
+
+.Btn5 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 1rem;
+}
+
+.Btn10 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}
+
+.Btn15 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}
+
+.Btn30 {
+    background-color: rgb(160, 189, 243);
+    border-radius: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}

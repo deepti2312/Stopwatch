@@ -6,12 +6,20 @@ import moment from 'moment-timezone';
 function Stopwatch() {
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false)
+    const [reverse, setReverse] = useState(true)
 
     useEffect(() => {
         let intervalId;
-        if (isRunning) {
-            intervalId = setInterval(() => setTime(time + 1), 10)
+        if (!reverse) {
+            if (isRunning) {
+                intervalId = setInterval(() => setTime(time - 1), 10)
+            }
+        } else {
+            if (isRunning) {
+                intervalId = setInterval(() => setTime(time + 1), 10)
+            }
         } return () => clearInterval(intervalId);
+
     }, [isRunning, time])
 
     const hours = Math.floor(time / 360000);
@@ -22,6 +30,7 @@ function Stopwatch() {
     const reset = () => {
         setIsRunning(false)
         setTime(0)
+        setReverse(true)
     }
 
     const start = () => {
@@ -30,6 +39,12 @@ function Stopwatch() {
 
     const stop = () => {
         setIsRunning(false)
+    }
+
+    const updatetime = (i) => {
+        setTime(i)
+        setReverse(false)
+
     }
 
     return (
@@ -46,6 +61,14 @@ function Stopwatch() {
                 }
                 <button className="resetBtn" onClick={reset}>reset</button>
             </p>
+
+            <div className='timeBtn'>
+                <h5>Set Time for Reverse</h5>
+                <button className="Btn5" onClick={() => updatetime(29959)}>5 min</button>
+                <button className="Btn10" onClick={() => updatetime(59959)}>10 min</button>
+                <button className="Btn15" onClick={() => updatetime(89959)}>15 min</button>
+                <button className="Btn30" onClick={() => updatetime(179959)}>30 min</button>
+            </div>
         </div>
     )
 }
