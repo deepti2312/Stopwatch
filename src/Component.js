@@ -20,7 +20,7 @@ function Stopwatch() {
             }
         } return () => clearInterval(intervalId);
 
-    }, [isRunning, time])
+    }, [isRunning, time, reverse])
 
     const hours = Math.floor(time / 360000);
     const minutes = Math.floor((time % 360000) / 6000);
@@ -56,10 +56,10 @@ function Stopwatch() {
             </p>
             <p>
                 {
-                    isRunning ? <button className="startBtn" onClick={stop}>stop</button> :
-                        <button className="stopBtn" onClick={start}>start</button>
+                    isRunning ? <button data-testid="stopButton" className="startBtn" onClick={stop}>stop</button> :
+                        <button data-testid="startButton" className="stopBtn" onClick={start}>start</button>
                 }
-                <button className="resetBtn" onClick={reset}>reset</button>
+                <button data-testid="resetButton" className="resetBtn" onClick={reset}>reset</button>
             </p>
 
             <div className='timeBtn'>
@@ -108,17 +108,17 @@ function Currenttime() {
                 <p>{time}</p>
             </div>
             <div className='grid'>
-                {displayedTimeZones.map((name) => <button className="Btn" onClick={() => changeTime(name)}>{name}</button>)}
+                {displayedTimeZones.map((name) => <button className="Btn" key={name} onClick={() => changeTime(name)}>{name}</button>)}
             </div>
             <div>
                 {countries.length > itemsperpage && (
 
-                    <div div className='Btns'>
-                        <button className="Btn1" onClick={() => changePage(currentpage - 1)} disabled={currentpage === 0}>
-                            <i class="fa fa-arrow-circle-left"></i>
+                    <div className='Btns' div="true">
+                        <button data-testid="pre-button" className="Btn1" onClick={() => changePage(currentpage - 1)} disabled={currentpage === 0}>
+                            <i className="fa fa-arrow-circle-left"></i>
                         </button>
-                        <button className="Btn2" onClick={() => changePage(currentpage + 1)} disabled={endIndex >= countries.length}>
-                            <i class="fa fa-arrow-circle-right"></i>
+                        <button data-testid="last-button" className="Btn2" onClick={() => changePage(currentpage + 1)} disabled={endIndex >= countries.length}>
+                            <i className="fa fa-arrow-circle-right"></i>
                         </button>
                     </div>
 
