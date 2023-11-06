@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { Currenttime, Stopwatch } from "../Component";
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -44,17 +44,17 @@ test("Rendered Reset Button Successfully", () => {
 
 })
 
-test('Previous button should be disabled on first page', ()=> {
-    const { getByTestId } = render(<Currenttime/>);
+test('Previous button should be disabled on first page', () => {
+    const { getByTestId } = render(<Currenttime />);
     expect(getByTestId("pre-button")).toBeDisabled();
 })
 
-test('Next & Previous button should not be disabled on mid of the pages', ()=> {
-    const { getByTestId } = render(<Currenttime/>);
-    expect((getByTestId("pre-button" ) && getByTestId("last-button"))).not.toBeDisabled();
+test('Next & Previous button should not be disabled on mid of the pages', () => {
+    const { getByTestId } = render(<Currenttime />);
+    expect((getByTestId("pre-button") && getByTestId("last-button"))).not.toBeDisabled();
 })
 
-// test("Next button should be disabled on last page", ()=> {
-//     const {getByTestId} = render(<Currenttime />);
-//     expect(!(getByTestId("last-button"))).not.toBeDisabled();
-// })
+test("Next button should be disabled on last page", () => {
+    const { getByTestId } = render(<Currenttime />);
+    expect(getByTestId("last-button")).not.toBeDisabled();
+})
