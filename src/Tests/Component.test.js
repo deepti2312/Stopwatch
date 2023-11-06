@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { Currenttime, Stopwatch } from "../Component";
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
