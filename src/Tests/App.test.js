@@ -4,11 +4,15 @@ import { render } from "@testing-library/react";
 import { MyNavbar } from "../App";
 
 
-test("nav bar rendered successfully.", () => {
+test("Navbar and icons rendered successfully.", () => {
 
-    render(
+    const { getByTestId } = render(
         <MemoryRouter>
             <MyNavbar />
         </MemoryRouter>
     )
+    expect(getByTestId('clock-link')).toBeInTheDocument()
+    expect(getByTestId('stopwatch-link')).toBeInTheDocument()
+
 })
+

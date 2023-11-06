@@ -5,9 +5,9 @@ import { Stopwatch, Currenttime } from './Component';
 
 export const MyNavbar = () => {
   return (
-    <div data-testid="clock-icon">
-      <nav className='navBar' data-testid="navbar">
-        <div className='icon' data-testid="link">
+    <div>
+      <nav className='navBar'>
+        <div className='icon'>
           <Link data-testid="clock-link" to="/" className='clockicon'><i className="fa fa-clock"></i></Link>
           <Link data-testid="stopwatch-link" to="/stopwatch" className='stopwatchicon'><i className="fa fa-stopwatch"></i></Link>
         </div>

@@ -44,12 +44,12 @@ test("Rendered Reset Button Successfully", () => {
 
 })
 
-test('Previous button should be disabled on first page', () => {
+test("Previous button should be disabled on first page", () => {
     const { getByTestId } = render(<Currenttime />);
     expect(getByTestId("pre-button")).toBeDisabled();
 })
 
-test('Next & Previous button should not be disabled on mid of the pages', () => {
+test("Next & Previous button should not be disabled on mid of the pages", () => {
     const { getByTestId } = render(<Currenttime />);
     expect((getByTestId("pre-button") && getByTestId("last-button"))).not.toBeDisabled();
 })
